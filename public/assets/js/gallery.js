@@ -1,0 +1,1 @@
+/*! getting-started - v0.0.0 - 2016-12-14 */$(function(){var a=$(".gallery");a.imagesLoaded(function(){b()});var b=function(){a.isotope({itemSelector:".gallery-item",percentPosition:!0,masonry:{columnWidth:".grid-sizer",gutter:0}})}});

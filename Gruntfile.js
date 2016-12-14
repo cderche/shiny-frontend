@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) { 
+module.exports = function(grunt) {
 grunt.loadNpmTasks('grunt-contrib-less');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-copy');
@@ -16,11 +16,11 @@ watch: {
 less: {
     default: {
         options: {
-            paths: ['pages/less'],
+            paths: ['core/less'],
             yuicompress: true
         },
         files: {
-            'pages/css/pages.css': 'pages/less/pages.less'
+            'public/pages/css/pages.css': 'core/less/pages.less'
         }
     }
 },
@@ -39,9 +39,9 @@ cssmin: {
         '<%= grunt.template.today("yyyy-mm-dd") %> */'
     },
     expand: true,
-    cwd: 'dist/assets/css/',
+    cwd: 'dist/public/css/',
     src: ['*.css', '!*.min.css'],
-    dest: 'dist/assets/css/',
+    dest: 'dist/public/css/',
     ext: '.css'
   }
 },
@@ -53,17 +53,17 @@ uglify: {
     my_target: {
       files: [{
           expand: true,
-          cwd: 'dist/assets/js/',
+          cwd: 'dist/public/js/',
           src: '**/*.js',
-          dest: 'dist/assets/js/'
+          dest: 'dist/public/js/'
       }]
     }
 }
 });
 
 grunt.registerTask(
-  'build', 
-  'Compiles all of the assets and copies the files to the build directory.', 
+  'build',
+  'Compiles all of the public and copies the files to the build directory.',
   ['copy','cssmin','uglify']
 );
 

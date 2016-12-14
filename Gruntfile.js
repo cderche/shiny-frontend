@@ -64,7 +64,7 @@ uglify: {
 grunt.registerTask(
   'build',
   'Compiles all of the public and copies the files to the build directory.',
-  ['copy','cssmin','uglify']
+  ['less','copy','cssmin','uglify']
 );
 
 };

@@ -1,0 +1,12 @@
+/* Generic Height Helpers
+------------------------------------
+ */
+.generate-height-options(10);
+
+.generate-height-options(@n, @i: 0) when (@i =< @n) {
+  @step : @i*10;
+  .vh-@{step} {
+    height: (@step*1vh);
+  }
+  .generate-height-options(@n, (@i + 1));
+}

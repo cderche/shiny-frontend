@@ -1,12 +1,9 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
-
-    button.btn.btn-primary.btn-cons Primary
-    button.btn.btn-success.btn-cons Success
-    button.btn.btn-complete.btn-cons Complete
-    button.btn.btn-info.btn-cons Info
-    button.btn.btn-warning.btn-cons Warning
-    button.btn.btn-danger.btn-cons Danger
+    .page-wrapper
+      include home/hero
+      include home/benefits
+      include home/book
+      include home/professionals
+      include home/reviews

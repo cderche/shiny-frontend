@@ -1,0 +1,34 @@
+@secondary-font-name: "Roboto";
+@secondary-font-weights: "300,400,500";
+@secondary-font-subsets: "cyrillic";
+
+.fontImport(@name, @weights, @subsets) {
+    @import url('https://fonts.googleapis.com/css?family=@{name}:@{weights}&subset=@{subsets}');
+}
+
+.fontImport(@secondary-font-name, @secondary-font-weights, @secondary-font-subsets);
+
+.font-secondary,
+.header .menu > li > a,
+.header .menu > li > .classic ul > li a,
+.header .menu > li > .horizontal ul li a,
+.header .menu > li > .mega .container ul.sub-menu > li a,
+.header .menu > li > .mega .container .sub-menu-heading,
+.panel .panel-heading .panel-title,
+.panel.panel-featured .panel-title h4,
+.nav-tabs > li > a,
+.form-group label:not(.error),
+.error-number,
+.block-title {
+  font-family: @secondary-font-name;
+}
+
+.generate-height-options(10);
+
+.generate-height-options(@n, @i: 0) when (@i =< @n) {
+  @step : @i+10;
+  .text-size-@{step} {
+    font-size: (@step*1px);
+  }
+  .generate-height-options(@n, (@i + 1));
+}
